@@ -10,13 +10,20 @@ import org.mapstruct.*;
 public interface EstoqueMapper {
 
     @Mapping(target = "produtoId", source = "produto.id")
+    @Mapping(target = "nomeProduto", source = "produto.nome")
     EstoqueViewDTO toViewDTO(Estoque estoque);
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "produto", ignore = true)
+    @Mapping(target = "dataCriacao", ignore = true)
+    @Mapping(target = "dataAtualizacao", ignore = true)
+    @Mapping(target = "transacoes", ignore = true)
     Estoque toEntity(EstoqueCreateDTO dto);
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "produto", ignore = true)
+    @Mapping(target = "dataCriacao", ignore = true)
+    @Mapping(target = "dataAtualizacao", ignore = true)
+    @Mapping(target = "transacoes", ignore = true)
     void updateEntityFromDTO(EstoqueUpdateDTO dto, @MappingTarget Estoque estoque);
 }
