@@ -9,11 +9,18 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring")
 public interface CategoriaMapper {
 
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "dataCriacao", ignore = true)
+    @Mapping(target = "dataAtualizacao", ignore = true)
+    @Mapping(target = "produtos", ignore = true)
     Categoria toEntity(CategoriaCreateDTO categoriaCreateDTO);
 
     CategoriaViewDTO toViewDTO(Categoria categoria);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "dataCriacao", ignore = true)
+    @Mapping(target = "dataAtualizacao", ignore = true)
+    @Mapping(target = "produtos", ignore = true)
     void updateEntityFromDTO(CategoriaUpdateDTO dto, @MappingTarget Categoria entity);
 }

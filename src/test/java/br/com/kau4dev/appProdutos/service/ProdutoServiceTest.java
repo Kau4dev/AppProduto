@@ -82,7 +82,7 @@ class ProdutoServiceTest {
             salvo.setDescricao("Caneta azul");
             salvo.setPreco(new BigDecimal("10.00"));
             salvo.setPrecoCusto(new BigDecimal("7.50"));
-            salvo.setIdCategoria(categoria);
+            salvo.setCategoria(categoria);
 
             var visualizacao = new ProdutoViewDTO(
                     1L,
@@ -181,7 +181,7 @@ class ProdutoServiceTest {
             p1.setDescricao("Caneta azul");
             p1.setPreco(new BigDecimal("5.00"));
             p1.setPrecoCusto(new BigDecimal("3.00"));
-            p1.setIdCategoria(c);
+            p1.setCategoria(c);
 
             var p2 = new Produto();
             p2.setId(2L);
@@ -191,7 +191,7 @@ class ProdutoServiceTest {
             p2.setDescricao("Lapis HB");
             p2.setPreco(new BigDecimal("3.00"));
             p2.setPrecoCusto(new BigDecimal("1.50"));
-            p2.setIdCategoria(c);
+            p2.setCategoria(c);
 
             var v1 = new ProdutoViewDTO(1L, "Caneta", "SKU-CAN-001", "1234567890123", "Caneta azul", new BigDecimal("5.00"), new BigDecimal("3.00"), 1L);
             var v2 = new ProdutoViewDTO(2L, "Lapis", "SKU-LAP-001", "1234567890124", "Lapis HB", new BigDecimal("3.00"), new BigDecimal("1.50"), 1L);
@@ -219,7 +219,7 @@ class ProdutoServiceTest {
             produto.setDescricao("Caneta azul");
             produto.setPreco(new BigDecimal("5.00"));
             produto.setPrecoCusto(new BigDecimal("3.00"));
-            produto.setIdCategoria(c);
+            produto.setCategoria(c);
 
             var visualizacao = new ProdutoViewDTO(1L, "Caneta", "SKU-CAN-001", "1234567890123", "Caneta azul", new BigDecimal("5.00"), new BigDecimal("3.00"), 1L);
 
@@ -269,7 +269,7 @@ class ProdutoServiceTest {
             produtoExistente.setDescricao("Caneta azul");
             produtoExistente.setPreco(new BigDecimal("5.00"));
             produtoExistente.setPrecoCusto(new BigDecimal("3.00"));
-            produtoExistente.setIdCategoria(c);
+            produtoExistente.setCategoria(c);
 
             var produtoAtualizadoEntidade = new Produto();
             produtoAtualizadoEntidade.setId(1L);
@@ -279,7 +279,7 @@ class ProdutoServiceTest {
             produtoAtualizadoEntidade.setDescricao("Caneta azul ponta fina");
             produtoAtualizadoEntidade.setPreco(new BigDecimal("12.00"));
             produtoAtualizadoEntidade.setPrecoCusto(new BigDecimal("8.00"));
-            produtoAtualizadoEntidade.setIdCategoria(c);
+            produtoAtualizadoEntidade.setCategoria(c);
 
             var visualizacao = new ProdutoViewDTO(1L, "Caneta Updated", "SKU-CAN-002", "1234567890123", "Caneta azul ponta fina", new BigDecimal("12.00"), new BigDecimal("8.00"), categoriaId);
 

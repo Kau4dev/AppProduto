@@ -43,7 +43,7 @@ public class ProdutoService {
             throw new ProdutoJaExisteException("Produto com o código de barras " + produto.getCodigoBarras() + " já existe.");
         }
 
-        produto.setIdCategoria(categoria);
+        produto.setCategoria(categoria);
         Produto produtoSalvo = produtoRepository.saveAndFlush(produto);
 
         Estoque estoque = new Estoque();

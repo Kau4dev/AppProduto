@@ -66,7 +66,7 @@ public class Produto {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoria_id", nullable = false)
     @NotNull(message = "A categoria não pode ser nula")
-    private Categoria idCategoria;
+    private Categoria categoria;
 
 
     @PrePersist

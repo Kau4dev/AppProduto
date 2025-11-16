@@ -10,19 +10,19 @@ import org.mapstruct.*;
 public interface ProdutoMapper {
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "idCategoria", ignore = true)
+    @Mapping(target = "categoria", ignore = true)
     @Mapping(target = "ativo", ignore = true)
     @Mapping(target = "dataCriacao", ignore = true)
     @Mapping(target = "dataAtualizacao", ignore = true)
     @Mapping(target = "estoque", ignore = true)
     Produto toEntity(ProdutoCreateDTO produtoCreateDTO);
 
-    @Mapping(target = "categoriaId", source = "idCategoria.id")
+    @Mapping(target = "categoriaId", source = "categoria.id")
     ProdutoViewDTO toViewDTO(Produto produto);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "idCategoria", ignore = true)
+    @Mapping(target = "categoria", ignore = true)
     @Mapping(target = "ativo", ignore = true)
     @Mapping(target = "dataCriacao", ignore = true)
     @Mapping(target = "dataAtualizacao", ignore = true)
