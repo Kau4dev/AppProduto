@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "Produtos", description = "Operações relacionadas a Produtos")
 @RestController
-@RequestMapping("/Produtos")
+@RequestMapping("api/Produtos")
 @RequiredArgsConstructor
 public class ProdutoController {
 
@@ -56,21 +56,4 @@ public class ProdutoController {
         return ResponseEntity.status(204).build();
     }
 
-    @PostMapping("{id}/estoque")
-    public ResponseEntity<EstoqueViewDTO> criarEstoqueDoProduto(@PathVariable Long id, @RequestBody @Valid EstoqueCreateDTO estoqueCreateDTO) {
-        EstoqueViewDTO estoqueCriado = produtoService.criarEstoqueDoProduto(id, estoqueCreateDTO);
-        return ResponseEntity.status(201).body(estoqueCriado);
-    }
-
-    @GetMapping("{id}/estoque")
-    public ResponseEntity<EstoqueViewDTO> buscarEstoqueDoProduto(@PathVariable Long id) {
-        return ResponseEntity.ok(produtoService.buscarEstoqueDoProduto(id));
-    }
-
-
-    @PutMapping("{id}/estoque")
-    public ResponseEntity<EstoqueViewDTO> atualizarEstoqueDoProduto(@PathVariable Long id, @RequestBody @Valid EstoqueUpdateDTO estoqueUpdateDTO) {
-        EstoqueViewDTO estoqueAtualizado = produtoService.atualizarEstoqueDoProduto(id, estoqueUpdateDTO);
-        return ResponseEntity.ok(estoqueAtualizado);
-    }
 }

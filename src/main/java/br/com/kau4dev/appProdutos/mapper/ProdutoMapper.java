@@ -9,11 +9,23 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring")
 public interface ProdutoMapper {
 
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "idCategoria", ignore = true)
+    @Mapping(target = "ativo", ignore = true)
+    @Mapping(target = "dataCriacao", ignore = true)
+    @Mapping(target = "dataAtualizacao", ignore = true)
+    @Mapping(target = "estoque", ignore = true)
     Produto toEntity(ProdutoCreateDTO produtoCreateDTO);
 
+    @Mapping(target = "categoriaId", source = "idCategoria.id")
     ProdutoViewDTO toViewDTO(Produto produto);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "idCategoria", ignore = true)
+    @Mapping(target = "ativo", ignore = true)
+    @Mapping(target = "dataCriacao", ignore = true)
+    @Mapping(target = "dataAtualizacao", ignore = true)
+    @Mapping(target = "estoque", ignore = true)
     void updateEntityFromDTO(ProdutoUpdateDTO dto, @MappingTarget Produto entity);
 }
