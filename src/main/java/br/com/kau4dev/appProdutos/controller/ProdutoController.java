@@ -3,9 +3,6 @@ package br.com.kau4dev.appProdutos.controller;
 
 import java.util.List;
 
-import br.com.kau4dev.appProdutos.dto.estoqueDTO.EstoqueCreateDTO;
-import br.com.kau4dev.appProdutos.dto.estoqueDTO.EstoqueUpdateDTO;
-import br.com.kau4dev.appProdutos.dto.estoqueDTO.EstoqueViewDTO;
 import br.com.kau4dev.appProdutos.dto.produtoDTO.ProdutoCreateDTO;
 import br.com.kau4dev.appProdutos.dto.produtoDTO.ProdutoUpdateDTO;
 import br.com.kau4dev.appProdutos.dto.produtoDTO.ProdutoViewDTO;
