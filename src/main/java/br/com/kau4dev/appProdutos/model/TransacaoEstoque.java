@@ -22,9 +22,10 @@ public class TransacaoEstoque {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "produto_id", nullable = false)
-    private Produto produto;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "estoque_id", nullable = false)
+    @NotNull(message = "O estoque não pode ser nulo")
+    private Estoque estoque;
 
     @Column(nullable = false)
     @NotNull
@@ -39,9 +40,4 @@ public class TransacaoEstoque {
 
     @Column(name = "data_criacao", nullable = false)
     private LocalDateTime dataCriacao;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "estoque_id", nullable = false)
-    @NotNull(message = "A categoria não pode ser nula")
-    private Estoque idEstoque;
 }

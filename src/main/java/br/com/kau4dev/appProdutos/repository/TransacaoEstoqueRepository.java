@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface TransacaoEstoqueRepository extends JpaRepository<TransacaoEstoque, Long> {
 
-    List<TransacaoEstoque> findByProdutoId(Long produtoId);
+    List<TransacaoEstoque> findByEstoqueId(Long estoqueId);
 
     List<TransacaoEstoque> findByTipo(TipoTransacao tipo);
 }
