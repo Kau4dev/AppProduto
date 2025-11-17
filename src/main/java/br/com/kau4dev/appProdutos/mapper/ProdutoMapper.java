@@ -27,5 +27,7 @@ public interface ProdutoMapper {
     @Mapping(target = "dataCriacao", ignore = true)
     @Mapping(target = "dataAtualizacao", ignore = true)
     @Mapping(target = "estoque", ignore = true)
+    @Mapping(target = "sku", ignore = true)
+    @Mapping(target = "codigoBarras", ignore = true)
     void updateEntityFromDTO(ProdutoUpdateDTO dto, @MappingTarget Produto entity);
 }
