@@ -100,8 +100,7 @@ public class EstoqueService {
 
     private void registrarTransacao(Estoque estoque, int quantidade, TipoTransacao tipo, String motivo) {
         TransacaoEstoque transacao = new TransacaoEstoque();
-        transacao.setProduto(estoque.getProduto());
-        transacao.setIdEstoque(estoque);
+        transacao.setEstoque(estoque);
         transacao.setQuantidade(quantidade);
         transacao.setTipo(tipo);
         transacao.setMotivo(motivo);

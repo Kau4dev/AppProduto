@@ -43,10 +43,9 @@ public class Estoque {
     @JoinColumn(name = "produto_id", referencedColumnName = "id")
     @NotNull(message = "O produto não pode ser nulo")
     @JsonBackReference
-    //@JsonIgnore
     private Produto produto;
 
-    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "estoque", cascade = CascadeType.ALL)
     private List<TransacaoEstoque> transacoes;
 
     @PrePersist
